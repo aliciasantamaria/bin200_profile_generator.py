@@ -108,11 +108,11 @@ def generate_200bp_binary(peaks_file, input_dir_F, input_dir_M, output_dir_F, ou
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Generate 200 bp binary genomic files')
     parser.add_argument('peaks_file', help='BED file with genomic peaks')
-    parser.add_argument('--input_dir_F', default='~/Chromatinsight/Marquezetal/analisismarquez/outputF')
-    parser.add_argument('--input_dir_M', default='~/Chromatinsight/Marquezetal/analisismarquez/outputM')
-    parser.add_argument('--output_dir_F', default='~/Chromatinsight/Marquezetal/analisismarquez/output200F_allchr')
-    parser.add_argument('--output_dir_M', default='~/Chromatinsight/Marquezetal/analisismarquez/output200M_allchr')
-    
+    parser.add_argument('--input_dir_F', required=True, help='Directory with female binary input files')
+    parser.add_argument('--input_dir_M', required=True, help='Directory with male binary input files')
+    parser.add_argument('--output_dir_F', required=True, help='Output directory for female 200 bp profiles')
+    parser.add_argument('--output_dir_M', required=True, help='Output directory for male 200 bp profiles')
+
     args = parser.parse_args()
     
     # Expand home directories
